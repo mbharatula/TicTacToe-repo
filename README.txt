@@ -12,3 +12,7 @@ TIC TAC TOE
 
 -Testing the Project
   Anyone intrested to test the project are requested to run the main.py file to get desired outcome.
+
+
+-For References
+  1) Random Module: https://docs.python.org/3/library/random.html
