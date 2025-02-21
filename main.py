@@ -72,20 +72,14 @@ if (len(v.matrix)==1):
             l.lpos()
             if w.gameOverX():
                 print("You Won The Game!!")
-                gameover=True
             if w.gameOverO():
                 print("It is my Day Try Again Later!")
-                gameover=True
+              
         if(userChoice=='o'):
             print(f"The Only Position Left For Me is {v.matrix[0]}\n Let Me Mark it")
             l.lpos()
             if w.gameOverO():
                 print("You Won The Game!!")
-                gameover=True
             if w.gameOverX():
                 print("It is my Day Try Again Later!")
-                gameover=True
-
-
-
-        
+    
