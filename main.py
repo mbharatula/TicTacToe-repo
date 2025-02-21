@@ -60,21 +60,21 @@ while len(v.matrix)>1:
             print()
             print("SO,LET ME MARK IT AGAIN")
 
-
-if (not w.gameOverX) | (not w.gameOverX):
-    if userChoice=='x':
-        print(f"The Only position left is {v.matrix[0]} and let me mark it as X")
+if (not w.gameOverX) and (not w.gameOverO):
+    if (userChoice=='x'):
+        print(f"The Only position Left for you is {v.matrix[0]}")
+        print(f"Let Me Mark it for You")
         l.lpos()
-        if w.gameOverX():
-            print("You Won The Game!!")
-        if w.gameOverO():
-            print("It is my Day Try Again Later!")
+        if(w.gameOverO):
+            print("You Win The Game !!")
+        if(w.gameOverX):
+            print("It is My day Try Again Later!!")
+    if (userChoice=='o'):
+        print(f"The Only Position Left for me is {v.matrix[0]}")
+        print("Let me Mark it")
+        l.lpos()
+        if(w.gameOverO):
+            print("You Win The Game !!")
+        if(w.gameOverX):
+            print("It is My day Try Again Later!!")
         
-
-    if userChoice=='o':
-        print(f"I choose the Position {v.matrix[0]}")
-        l.lpos()
-        if w.gameOverX():
-            print("You Won The Game!!")
-        if w.gameOverO():
-            print("It is my Day Try Again Later!")
