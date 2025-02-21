@@ -12,6 +12,7 @@ i.intialise()
 print("For Convinience Let Us Assign Numbers as Follows..")
 i.intialise1()
 
+gameover=False
 userChoice=input("Enter The Symbol You Want To Choose..\"X\" or \"O\"\n").lower()
 while len(v.matrix)>1:
     if userChoice=='x':
@@ -24,9 +25,11 @@ while len(v.matrix)>1:
             g.gameX(m=p.upos,n=p.cpos)
             if w.gameOverX():
                 print("You Won The Game!!")
+                gameover=True
                 break
             if w.gameOverO():
                 print("It is my Day Try Again Later!")
+                gameover=True
                 break
 
         elif p.upos not in v.matrix:
@@ -46,9 +49,11 @@ while len(v.matrix)>1:
             g.gameX(m=p.cpos,n=p.upos)
             if w.gameOverO():
                 print("You Won The Game!!")
+                gameover=True
                 break
             if w.gameOverX():
                 print("It is my Day Try Again Later!")
+                gameover=True
                 break
 
         elif p.upos not in v.matrix:
@@ -60,21 +65,27 @@ while len(v.matrix)>1:
             print()
             print("SO,LET ME MARK IT AGAIN")
 
-if (not w.gameOverX) and (not w.gameOverO):
-    if (userChoice=='x'):
-        print(f"The Only position Left for you is {v.matrix[0]}")
-        print(f"Let Me Mark it for You")
-        l.lpos()
-        if(w.gameOverO):
-            print("You Win The Game !!")
-        if(w.gameOverX):
-            print("It is My day Try Again Later!!")
-    if (userChoice=='o'):
-        print(f"The Only Position Left for me is {v.matrix[0]}")
-        print("Let me Mark it")
-        l.lpos()
-        if(w.gameOverO):
-            print("You Win The Game !!")
-        if(w.gameOverX):
-            print("It is My day Try Again Later!!")
+if (len(v.matrix)==1):
+    if(not gameover):
+        if(userChoice=='x'):
+            print(f"The Only Position Left For You is {v.matrix[0]}\n Let Me Mark it")
+            l.lpos()
+            if w.gameOverX():
+                print("You Won The Game!!")
+                gameover=True
+            if w.gameOverO():
+                print("It is my Day Try Again Later!")
+                gameover=True
+        if(userChoice=='o'):
+            print(f"The Only Position Left For Me is {v.matrix[0]}\n Let Me Mark it")
+            l.lpos()
+            if w.gameOverO():
+                print("You Won The Game!!")
+                gameover=True
+            if w.gameOverX():
+                print("It is my Day Try Again Later!")
+                gameover=True
+
+
+
         
